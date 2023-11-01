@@ -1,0 +1,16 @@
+{"categories" : [
+    {
+        "id": 1,
+        "description":"Electronics"
+    }, {
+        "id": 2,
+        "description":"Clothing"
+    },
+    {
+        "id": 3,
+        "description":"Books"
+    }, {
+        "id": 4,
+        "description":"Kitchen Appliances"
+    }
+]}

@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Smartphone",
+      "price": 599.99,
+      "description": "The latest smartphone with advanced features.",
+      "category": 1,
+      "image": "https://example.com/images/smartphone.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Laptop",
+      "price": 899.99,
+      "description": "High-performance laptop for work and gaming.",
+      "category": 1,
+      "image": "https://example.com/images/laptop.jpg"
+    },
+    {
+      "id": 3,
+      "name": "T-shirt",
+      "price": 19.99,
+      "description": "Comfortable cotton t-shirt available in various colors.",
+      "category": 2,
+      "image": "https://example.com/images/t-shirt.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Jeans",
+      "price": 49.99,
+      "description": "Classic denim jeans for everyday wear.",
+      "category": 2,
+      "image": "https://example.com/images/jeans.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Book: The Great Gatsby",
+      "price": 12.99,
+      "description": "A classic novel by F. Scott Fitzgerald.",
+      "category": 3,
+      "image": "https://example.com/images/book.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Cookware Set",
+      "price": 79.99,
+      "description": "Non-stick cookware set for your kitchen.",
+      "category": 4,
+      "image": "https://example.com/images/cookware.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Blender",
+      "price": 34.99,
+      "description": "Powerful blender for smoothies and more.",
+      "category": 4,
+      "image": "https://example.com/images/blender.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Dress Shirt",
+      "price": 29.99,
+      "description": "Formal dress shirt for special occasions.",
+      "category": 2,
+      "image": "https://example.com/images/dress-shirt.jpg"
+    }
+  ]
+}
