@@ -36,3 +36,52 @@ $ShopEase-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+$spaceamounts: (0, 2, 3, 5, 10, 15, 16, 20, 25, 30, 45, 50, 100); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    .p#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
+
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}px;
+  }
+
+  .p-#{$space} {
+    padding: #{$space}px;
+  }
+}
+
+$fontSizes: (10, 12, 14, 15, 16, 18, 20, 22, 24, 25, 40, 50 , 80); // Adjust this to include the pixel amounts you need.
+
+@each $size in $fontSizes {
+  .fz-#{$size} {
+    font-size: #{$size}px !important;
+  }
+}
+
+$wh: (20, 30, 50, 70, 80, 90, 100, 120, 130, 150, 200, 250, 300, 400, 450, 600, 700); // Adjust this to include the pixel amounts you need.
+
+@each $size in $wh {
+  .w-#{$size}px {
+    width: #{$size}px !important;
+  }
+
+  .h-#{$size}px {
+    height: #{$size}px !important;
+  }
+}
+.w-100{
+  width: 100%;
+}
