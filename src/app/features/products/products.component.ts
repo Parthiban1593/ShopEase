@@ -1,4 +1,4 @@
-import { Component, Signal, WritableSignal, computed, inject, signal } from '@angular/core';
+import { Component, Signal, ViewContainerRef, WritableSignal, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
@@ -12,8 +12,7 @@ export class ProductsComponent {
   
   private dataService  = inject(DataService);
   public categorySignal : any= toSignal(this.dataService.loadCategories()) || [];
-  private productsSignal : any= toSignal(this.dataService.loadProducts());
-  
+  private productsSignal : any= toSignal(this.dataService.loadProducts()) || [];
   category : FormControl = new FormControl("");
   searchProduct : FormControl = new FormControl("");
   public filterSignal : WritableSignal<any> = signal({category : this.category.value,searchProduct : this.searchProduct.value} as any);
@@ -24,10 +23,20 @@ export class ProductsComponent {
     return !this.categoryFilterSignal() && !this.productFilterSignal()
       ? this.productsSignal()?.products
       : this.productsSignal()?.products.filter((product : any) => {
-        return (
-          product.name.toLowerCase().includes(this.productFilterSignal().toLowerCase()) &&
-          product.category === this.categoryFilterSignal()
-        );
+        if(this.categoryFilterSignal() && this.productFilterSignal().toLowerCase()){
+          return (
+            product.name.toLowerCase().includes(this.productFilterSignal().toLowerCase()) 
+            && product.category === this.categoryFilterSignal()
+          );
+        }else if(!this.categoryFilterSignal()){
+          return (
+            product.name.toLowerCase().includes(this.productFilterSignal().toLowerCase()) 
+            //&& product.category === this.categoryFilterSignal()
+          );
+        }else{
+          return(product.category === this.categoryFilterSignal())
+        }
+        
       });
 
       
